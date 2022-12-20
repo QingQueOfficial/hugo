@@ -1,12 +1,21 @@
-baseurl: https://zhoubao.nbplus.eu.org
+#==================================================#
+#YAML文件，冒号  :  后面要加空格!!!!!!!!!!!!(注释不用)#
+#==================================================#
+
+# 网站基础设置，baseurl是你网站的地址，这个决定了重定向到哪里，乱改会出现各种诡异的错误
+baseurl: https://www.example.com/
+#这里的languageCode改了对于网站显示什么语言是没用的
 languageCode: zh-CN
 theme: hugo-theme-stack
 paginate: 5
-title: 周五晚报
+#网站名
+title: 我的网站
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
 
+#这里才是真正决定显示语言的地方
+#中午翻译文件在 hugo/themes/hugo-theme-stack/i18n/zh-CN.yaml
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk
 DefaultContentLanguage: zh-cn
@@ -15,6 +24,8 @@ DefaultContentLanguage: zh-cn
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage: true
 
+#决定文章url的地方，slug可在FontMatter里定义
+#默认FontMatter可以在  hugo/themes/hugo-theme-stack/archetypes/default.md里面改
 permalinks:
     post: /p/:slug/
     page: /:slug/
@@ -36,7 +47,7 @@ params:
 
     sidebar:
         emoji: 🍥
-        subtitle: 独属于我们的报纸
+        subtitle: 这是副标题
         avatar:
             enabled: false
             local: true
@@ -50,8 +61,9 @@ params:
             enabled: false
             default: Licensed under CC BY-NC-SA 4.0
 
+#评论系统
     comments:
-        enabled: true
+        enabled: false
         provider: waline
 
         disqusjs:
@@ -79,10 +91,11 @@ params:
             clientSecret:
             autoCreateIssue: false
 
+#作者用waline，因此waline注释多
         waline:
-            enable: true #是否开启
+            enable: false #是否开启
             dark: 'body.darkmode--activated'
-            serverURL: waline.hehysh.eu.org # Waline #服务端地址，我们这里就是上面部署的 Vercel 地址
+            serverURL:  # Waline #服务端地址，我们这里就是上面部署的 Vercel 地址
             locale:
                 placeholder: 疑义相与析，畅所欲言，留下你的足迹吧！不登录，不填邮箱也没关系哒 # #评论框的默认文字
             avatar: mm # 头像风格
@@ -102,7 +115,7 @@ params:
                 - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
         
         twikoo:
-            envId: twikoo-2g36bkuz88660f27
+            envId: 
             region:
             path:
             lang:
@@ -181,6 +194,7 @@ menu:
               ### For demonstration purpose, the home link will be open in a new tab
               newTab: false
               icon: home
+#其他的menu，比如“关于”“友链”等，在 hugo/content/page目录下的各index.md内
 
 related:
     includeNewer: true

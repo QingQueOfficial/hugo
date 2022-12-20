@@ -1,10 +1,10 @@
 ---
 title: 链接
 links:
-  - title: 周五晚报
-    description: 属于我们的报纸！
-    website: https://zhoubao.nbplus.eu.org/
-    image: https://zhiyin.nitaimei
+  - title: EXAMPLE
+    description: An example site
+    website: https://www.example.com/
+    image: https://www.example.com/
 slug: "links"
 menu:
     main: 

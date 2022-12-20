@@ -1,5 +1,5 @@
 ---
-author: 周五晚报编辑部
+author: 
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: 
